@@ -1,0 +1,70 @@
+
+		
+		 System.out.println("Escolha, o que vc quer fazer? ");
+		 System.out.println(" 1 - Cadastrar  \n 2 - Atualizar \n 3 - Deletar "
+		 		+ "\n ----------------------");
+		 op = (char)System.in.read();
+		
+		 if ((op == '1')) {
+			  Scanner ler = new Scanner(System.in);
+				Contato contato = new Contato();
+				
+				System.out.printf("Informe um nome:\n");
+				nome = ler.nextLine();
+				
+				contato.setNome(nome);
+				contato.setIdade(57);
+				contato.setDataCadastro(new Date());
+				
+				 System.out.println("Confirmar? \n S - Sim    N - Não \n -----------  ");
+				 op = (char)System.in.read();
+				 
+					ler.close();	
+				 
+				
+		  } if  ( op == '2'){
+			  Contato c1 = new Contato();
+				c1.setNome("Renner Sardek");
+				c1.setIdade(30);
+				c1.setDataCadastro(new Date());
+				c1.setId(1);
+				
+				contatoDao.update(c1);
+				
+		  } if (op == '3') {
+			  contatoDao.deleteByID(1);
+		  }
+	 
+		
+		
+		
+		
+		Contato contato = new Contato();
+		contato.setNome("Renner");
+		contato.setIdade(57);
+		contato.setDataCadastro(new Date());
+		
+		//aqui vc vai usar para salvar o contato
+		//contatoDao.save(contato);  
+		
+		//Atualizar contato
+		Contato c1 = new Contato();
+		c1.setNome("Renner Sardek");
+		c1.setIdade(30);
+		c1.setDataCadastro(new Date());
+		c1.setId(1);
+		
+		//aqui vc vai atualizar
+			// contatoDao.update(c1); 
+		
+		//Deletar o contato pelo numero ID
+			//contatoDao.deleteByID(1);
+		
+		//Visualização dos registros do BD - TODOS
+		
+		/* for(Contato c : contatoDao.getContatos()) {
+			 System.out.println("Contato: "+c.getNome()+" "+c.getIdade()+" anos");
+		 }    */
+	}
+
+}
